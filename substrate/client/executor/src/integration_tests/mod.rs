@@ -475,6 +475,8 @@ fn mk_test_runtime(
 		blob,
 		true,
 		None,
+		None,
+		&[],
 	)
 	.expect("failed to instantiate wasm runtime")
 }
@@ -701,6 +703,8 @@ fn memory_is_cleared_between_invocations(wasm_method: WasmExecutionMethod) {
 		RuntimeBlob::uncompress_if_needed(&binary[..]).unwrap(),
 		true,
 		None,
+		None,
+		&[],
 	)
 	.unwrap();
 
