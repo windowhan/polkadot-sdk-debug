@@ -1506,6 +1506,7 @@ impl<T: Config> Pallet<T> {
 			voting.rejig(frame_system::Pallet::<T>::block_number());
 			voting.locked_balance()
 		});
+		log::info!(target: "democracy-precompile", "lock_needed : {:?}", lock_needed);
 		if lock_needed.is_zero() {
 			T::Currency::remove_lock(DEMOCRACY_ID, who);
 		} else {
